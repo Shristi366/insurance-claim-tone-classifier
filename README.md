@@ -59,15 +59,3 @@ python classifier.py
 
 * Primary: `gemini/gemini-2.5-flash` (Google Gemini free tier)
 * Fallback: `groq/llama-3.3-70b-versatile` (Groq free tier)
-
-
-python classifier.py
-
-
-
-\## Models Used
-
-\- Primary: gemini/gemini-2.5-flash (Google Gemini free tier)
-
-\- Fallback: groq/llama-3.3-70b-versatile (Groq free tier)
-
