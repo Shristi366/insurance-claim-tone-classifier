@@ -1,64 +1,65 @@
-\# P\&C Insurance Claim Tone Classifier
-
-
+# P&C Insurance Claim Tone Classifier
 
 Month 2 Assignment — classifies insurance claim descriptions using Google Gemini AI with Groq fallback.
 
+---
 
+## What it does
 
-\## What it does
+Reads 10 fictional P&C insurance claims from a CSV file and classifies each one across three dimensions:
 
-Reads 10 fictional P\&C insurance claims from a CSV file and classifies each one across three dimensions:
+* `claim_type` — motor | property | liability
+* `tone` — calm | frustrated | urgent
+* `legal_action_mentioned` — yes | no
 
-\- claim\_type — motor | property | liability
+---
 
-\- tone — calm | frustrated | urgent
+## Project Structure
 
-\- legal\_action\_mentioned — yes | no
+* `llm.py` — shared LLM helper (Gemini primary, Groq fallback)
+* `classifier.py` — main classification script
+* `claims.csv` — 10 fictional claim descriptions (input)
+* `classified_claims.json` — classification results (output)
 
+---
 
+## Setup
 
-\## Project Structure
+### 1. Create virtual environment
 
-\- llm.py — shared LLM helper (Gemini primary, Groq fallback)
-
-\- classifier.py — main classification script
-
-\- claims.csv — 10 fictional claim descriptions (input)
-
-\- classified\_claims.json — classification results (output)
-
-
-
-\## Setup
-
-
-
-\### 1. Create virtual environment
-
+```bash
 python -m venv venv
+venv\Scripts\activate
+```
 
-venv\\Scripts\\activate
+### 2. Install dependencies
 
-
-
-\### 2. Install dependencies
-
+```bash
 pip install -r requirements.txt
+```
 
+### 3. Add API keys
 
+Create a `.env` file in the project root:
 
-\### 3. Add API keys
+```env
+GEMINI_API_KEY=your_gemini_key_here
+GROQ_API_KEY=your_groq_key_here
+```
 
-Create a .env file in the project root:
+### 4. Run
 
-GEMINI\_API\_KEY=your\_gemini\_key\_here
+```bash
+python classifier.py
+```
 
-GROQ\_API\_KEY=your\_groq\_key\_here
+---
 
+## Models Used
 
+* Primary: `gemini/gemini-2.5-flash` (Google Gemini free tier)
+* Fallback: `groq/llama-3.3-70b-versatile` (Groq free tier)
 
-\### 4. Run
 
 python classifier.py
 
