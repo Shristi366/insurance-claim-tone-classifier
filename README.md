@@ -20,7 +20,8 @@ Reads 10 fictional P&C insurance claims from a CSV file and classifies each one 
 * `classifier.py` — main classification script
 * `claims.csv` — 10 fictional claim descriptions (input)
 * `classified_claims.json` — classification results (output)
-
+* `requirements.txt` — Python dependencies
+  
 ---
 
 ## Setup
